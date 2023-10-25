@@ -1,7 +1,6 @@
 // JSON from json_encode($data)
 let json = [
 {"prod_id":01,"prod":[{"link":"details/apple-cider.html","title":"Apple Cider Complex","price":"23.99","description":"Apple Cide Diet Aid and Digestive Support","img":"blk.png"}]},
-{"prod_id":02,"prod":[{"link":"details/diet-pills.html","title":"ThermoTHIN","price":"23.99","description":"Diet Pills, Fat Metabolisers","img":"blk.png"}]},
 {"prod_id":03,"prod":[{"link":"details/activated-charcoal.html","title":"Activaed Charcoal","price":"12.99","description":"Activated Charcoal","img":"blk.png"}]},
 {"prod_id":04,"prod":[{"link":"details/tumeric.html","title":"Tumeric","price":"23.99","description":" Turmeric 500mg with Black Pepper Extract 60 Capsules - 150ml","img":"150.png"}]},
 {"prod_id":02,"prod":[{"link":"details/pet-calming.html","title":"Pet Calming","price":"24.99","description":"Pet Calming Supplement","img":"blk.png"}]},
@@ -17,10 +16,8 @@ let json = [
 {"prod_id":03,"prod":[{"link":"details/diet-pills.html","title":"Konjac Diet Pills","price":"24.99","description":"Thermogenic Fat Metaboliser","img":"blk.png","stripe":"buy_btn_1O38GXCXupWLQTjRRskeGkqg"}]},
 {"prod_id":03,"prod":[{"link":"details/digestive-aid.html","title":"Digestive Aid","price":"14.99","description":"Digestive enzymes blend 6 plant-derived enzymes","img":"blk.png"}]},
 {"prod_id":03,"prod":[{"link":"details/fibre-full.html","title":"Fibre Full","price":"24.99","description":"Fibre and Full Healthy Bowels and Weight Loss Blend","img":"blk.png"}]},
-{"prod_id":03,"prod":[{"link":"details/greenourish.html","title":"GreeNourish","price":"14.99","description":"GreeNourish Complete","img":"blk.png"}]},
 {"prod_id":03,"prod":[{"link":"details/liver-cleanse.html","title":"Liver Cleanse","price":"14.99","description":"Liver Clear is a healthy liver support formula.","img":"blk.png"}]},
 {"prod_id":03,"prod":[{"link":"details/menopause-n.html","title":"Menopause Supplement","price":"14.99","description":"Hormone and Bone Support for Women 60 Capsules.","img":"150.png"}]},
-{"prod_id":03,"prod":[{"link":"details/spore-gone.html","title":"Spore Gone","price":"14.99","description":"A combination gastrointestinal complex","img":"blk.png"}]},
 {"prod_id":03,"prod":[{"link":"details/vitamin-k.html","title":"Vitamin K","price":"14.99","description":"Vitamin K2 MK-7 100µg (Micrograms) 120 Capsules - 150ml","img":"150.png"}]},
 {"prod_id":03,"prod":[{"link":"details/womens-water.html","title":"Water Balance Complex","price":"17.99","description":"Women's Water Balance Complex","img":"150.png"}]},
 {"prod_id":24,"prod":[{"link":"details/zinc-n.html","title":"Zinc Supplement","price":"9.99","description":"Zinc 15mg 120 Capsules - 150ml","img":"150.png"}]}
