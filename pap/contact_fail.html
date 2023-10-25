@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Pills & Powders - Natural Shopping</title>
-<link rel="stylesheet" href="css/gs_style.css">
-
+	<title>Pills and Powders Natural Shopping</title>
+<link rel="stylesheet" href="css/style.css">
 	<script>
 	function bagAdd(){
 		document.getElementById("cartIcon").src="img/cartAdded.png";
 	}
-
 	</script>
 </head>
 <body>
@@ -17,53 +15,27 @@
 <div class="container, top">
   <div class="navbar">
     <div class="logo">
-      <a href="index.html"><img src="gslogo.png" alt="Gadget Stall iStall" width="125px" /></a>
+      <a href="index.html"><img src="img/gblogo.png" alt="Grand Bizaar" width="125px" /></a>
     </div>
     <nav>
       <ul id="MenuItems">
-       <span class="dropdown">
-		  <button class="dropbtn">Category &#8595;</button>
-             <div class="dropdown-content">
-                 <a href="supplements.html">Supplements</a>
-                 <a href="protein.html">Protein</a>
-                 <a href="nutrients.html">Nutrients</a>
-				 <a href="vitamins.html">Vitamins</a>
-	             <a href="blends.html">Blends</a>
-	             <a href="cosmetics.html">Cosmetics</a>
-	             <a href="pharmacy.html">Pharmacy</a>
-              </div>
-       </span>
-<span class="dropdown">
-  <button class="dropbtn">Sizes &#8595;</button>
-  <div class="dropdown-content">
-    <a href="large.html">Large</a>
-    <a href="medium.html">Medium</a>
-    <a href="small.html">Small</a>
-  </div>
-  </span>
-	
-
-<li><a href="contact.html">Contact</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="product.html">Gifts</a></li>
+        <li><a href="#">Electronics</a></li>
+        <li><a href="#">Software</a></li>
+		<li><a href="#">Nutrition</a></li>
+        <li><a href="account.html">Stripe Account</a></li>
       </ul>
     </nav>
-    <a href="cart.html"><img id="cartIcon" src="img/cart.png" alt="Go to basket" width="30px" height="30px" /></a>
+    <a href="cart.html"><img id="cartIcon" src="img/cart.png" alt="" width="30px" height="30px" /></a>
 
   </div>
 </div>
 
 <div class="small-container">
-<div>
-
   <div class="row row-2">
- <div class="article">
-  <h1>Article on Suplements</h1><br>
-<p>Long description goes here on supplements and the supplements in gneral, particularly where there are common ingredients or unusual ones where the customer to a website might require further information.
-This helps with search engine positioning by offering valuable infoamtion on keyword relatied terms to the user.</p>
-<p>We can offer more infoamtion on the subject or place a belspoke order, please enquire now for more infoamtion. You shouldn't hestitate.</p>
-</div>
-</div>
-    <h2>Get in touch</h2>
-
+    <h2>Contact</h2>
+<h1>For some perculiar reason, the message didn't send. If you wouldn't mind terribly, please send a message by direct email to <a href="mailto:tomowens.contact@gmail.com">This Account </a> or Call.</h1>
  <form>
  <div>
  <input type="text" placeholder="Your Name" class="ffield"></input>
@@ -104,9 +76,8 @@ This helps with search engine positioning by offering valuable infoamtion on key
 	  <option value="">CRM Script</option>
 	  <option value="">iPhone Crystal Case</option>
     </select>
-	 Other Product: <input type="text" placeholder="N/A" style="width:100px;border-color:#0f0;"></input>
-	 <input id="subject_line" placeholder="Subject (Optional)" type="text" value="" class="ffield" style="width:100%;"></input>
- <textarea rows="8" placeholder="Your Message" style="width:100%;" class="ffield"></textarea>
+	 Other Product: <input type="text" placeholder="N/A" style="width:100px;border-color:orange;"></input>
+ <input type="textarea" style="height:5rem;" rowspan="8"></input>
  <button>Send</button>
  </br>
  </div>
@@ -159,13 +130,18 @@ This helps with search engine positioning by offering valuable infoamtion on key
   </div>
 </div>
 
-<!-- subject vars -->
+<!-- js for toggle menu -->
 <script>
-//var $_GET=[];
-//window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(a,name,value){$_GET[name]=value;});
-//alert($_GET['value']);
+  var MenuItems = document.getElementById('MenuItems');
+  MenuItems.style.maxHeight = '0px';
 
-</script>
+  function menutoggle() {
+    if (MenuItems.style.maxHeight == '0px') {
+      MenuItems.style.maxHeight = '200px';
+    } else {
+      MenuItems.style.maxHeight = '0px';
+    }
+  }
 </script>
 </body>
 </html>

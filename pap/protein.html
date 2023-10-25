@@ -19,14 +19,34 @@
     <div class="logo">
       <a href="index.html"><img src="gslogo.png" alt="Gadget Stall iStall" width="125px" /></a>
     </div>
-    <nav>
+   <nav>
       <ul id="MenuItems">
-        <li><a href="index.html">Home</a></li>
-		<li><a href="contact.html">Contact</a></li>
+       <span class="dropdown">
+		  <button class="dropbtn">Category &#8595;</button>
+             <div class="dropdown-content">
+                 <a href="supplements.html">Supplements</a>
+                 <a href="protein.html">Protein</a>
+                 <a href="nutrients.html">Nutrients</a>
+				 <a href="vitamins.html">Vitamins</a>
+	             <a href="blends.html">Blends</a>
+	             <a href="cosmetics.html">Cosmetics</a>
+	             <a href="pharmacy.html">Pharmacy</a>
+              </div>
+       </span>
+<span class="dropdown">
+  <button class="dropbtn">Sizes &#8595;</button>
+  <div class="dropdown-content">
+    <a href="large.html">Large</a>
+    <a href="medium.html">Medium</a>
+    <a href="small.html">Small</a>
+  </div>
+  </span>
+	
 
+<li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
-    <!--<a href="cart.html"><img id="cartIcon" src="img/cart.png" alt="Go to basket" width="30px" height="30px" /></a>-->
+ <a href="cart.html"><img id="cartIcon" src="img/cart.png" alt="Go to basket" width="30px" height="30px" /></a>
 
   </div>
 </div>
@@ -34,23 +54,8 @@
 <div class="small-container">
   <div class="row row-2">
    <!--<h2>All Products</h2>-->
-	<form action="#"><input type="search" class="search" placeholder="Search"></input></form>
-	<select>
-      <option value="">Sizes</option>
-      <option value="">Large</option>
-      <option value="">Medium</option>
-      <option value="">Small</option>
-    </select>
-    <select>
-      <option value="">Category</option>
-      <option value=""><a href="supplements.html">Supplements<a/></option>
-	  <option value=""><a href="protein.html">Protein</a></option>
-	  <option value=""><a href="nutrients.html">Nutrients</a></option>
-	  <option value=""><a href="vitamins.html">Vitamins</a></option>
-	  <option value=""><a href="blends.html">Blends</a></option>
-	  <option value=""><a href="cosmetics.html">Cosmetics</a></option>
-	  <option value=""><a href="pharmacy.html">Pharmacy</a></option>
-    </select>
+	<form action="#"><input id="myInput" type="search" class="search" onkeyup="searchFunction()" placeholder="Search" title="Type in a name"></input></form>
+	
 	<select>
       <option value="">Default Sorting</option>
       <option value="">Sort by Price</option>
@@ -62,10 +67,10 @@
 <h2 class="offers-txt">Offers may be available on large orders, please enquire.</h2>
 <br><br>
 <div id="test" class="catalog flex-container"></div></div>
-<div class="more-buttons">
+<!--<div class="more-buttons">
   <a href="index.html"><button><</button></a>&nbsp;<a href="#"><button id="load-more">LOAD MORE</button></a>
 
-</div>
+</div>-->
 
 </div>
 
@@ -152,6 +157,24 @@ let html = '';
 		
 
 
+</script>
+<script>
+//search page
+function searchFunction() {
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  div = document.getElementById("test");
+  a = div.getElementsByTagName("div");
+  for (i = 0; i < a.length; i++) {
+    txtValue = a[i].textContent || a[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      a[i].style.display = "";
+    } else {
+      a[i].style.display = "none";
+    }
+  }
+}
 </script>
 
 

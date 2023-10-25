@@ -1,15 +1,16 @@
-<!DOCTYPE html>
+
+
 <html>
 <head>
-	<title>Pills & Powders - Natural Shopping</title>
-<link rel="stylesheet" href="css/gs_style.css">
-
+	<title>Pills and Powders | Articles All | Natural Nutrition, Supplements and Pharmacy Coming soon</title>
+    <meta name="keywords" content="supplements, protein, nutrition, herbals, diet pills, health">
+	<meta name="description" content="All articles, Supplements and Nutrition for health and wellbeing, large stockist. Fatatsic range and variety.">
 	<script>
 	function bagAdd(){
 		document.getElementById("cartIcon").src="img/cartAdded.png";
 	}
-
 	</script>
+	<link rel="stylesheet" href="css/gs_style.css">
 </head>
 <body>
 
@@ -17,9 +18,9 @@
 <div class="container, top">
   <div class="navbar">
     <div class="logo">
-      <a href="index.html"><img src="gslogo.png" alt="Pills and Powders" width="125px" /></a>
+      <a href="index.html"><img src="gslogo.png" alt="Pill and Powders logo" width="125px" /></a>
     </div>
-        <nav>
+      <nav>
       <ul id="MenuItems">
        <span class="dropdown">
 		  <button class="dropbtn">Category &#8595;</button>
@@ -47,58 +48,30 @@
 <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
-    <a href="cart.html"><img id="cartIcon" src="img/cart.png" alt="Go to basket" width="30px" height="30px" /></a>
+   <a href="cart.html"><img id="cartIcon" src="img/cart.png" alt="Go to basket" width="30px" height="30px" /></a>
 
   </div>
 </div>
 
-<div class="small-container ">
-  <div class="row row-2 overlay">
-    <h2>Contact</h2>
-
- <form>
- <div>
- <input type="text" placeholder="Your Name" class="ffield"></input>
- <input type="text" placeholder="Your Company" class="ffield"></input>
- <input type="text" placeholder="Your Email Address" class="ffield"></input>
- <input type="text" placeholder="Your Telephone Number" class="ffield"></input>
- 
- <select>
-      <option value="">Reason for Contact</option>
-      <option value="">Make an Offer</option>
-	  <option value="">General Enquiry</option>
-    </select>
-	 <select>
-      <option value="">Payment Option</option>
-      <option value="">Non Applicable</option>
-	  <option value="">Bitcoin</option>
-	  <option value="">Cosmos Crypto</option>
-	  <option value="">Other Crypto</option>
-	  <option value="">Stripe</option>
-	  <option value="">Worldpay</option>
-    </select>
-		 	<select>
-      <option value="">Postal Options</option>
-	  <option value="">N/A</option>
-      <option value="">Royal Mail</option>
-	  <option value="">International</option>
-	  <option value="">Special Delivery</option>
-	  <option value="">Collection</option>
-	  <option value="">Same Day Delivery (3 Mile Radius)</option>
-	  <option value="">UPS</option>
-    </select>
-	 Product: <input type="text" placeholder="N/A" style="width:100px;border-color:#0f0;"></input>
-	 <input id="subject_line" placeholder="Subject (Optional)" type="text" value="" class="ffield" style="width:100%;"></input>
- <textarea rows="8" placeholder="Your Message" style="width:100%;" class="ffield"></textarea>
- <button>Send</button>
- </br>
- </div>
- </form>
- </div>
- </div>
- </br> </br>
+<div class="small-container">
+  <div class="row row-2">
+   <!--<h2>All Products</h2>-->
+	<form action="#"><input type="search" class="search" placeholder="Search"></input></form>
+	
+	<!--<select>
+      <option value="">Default Sorting</option>
+      <option value="">Sort by Price</option>
+      <option value="">Sort by Name</option>
+      <!--<option value="">Sort by Rating</option>
+    </select>-->
+  </div>
+<div class="outer_cont">
+<h2 class="offers-txt">Useful articles and posts</h2>
+<br><br>
+<div id="test" class="catalog flex-container"></div></div>
 
 
+</div>
 
 <!-- Footer -->
 <div class="footer">
@@ -145,13 +118,40 @@
   </div>
 </div>
 
-<!-- subject vars -->
+
+<script >
+
+let html = '';
+</script>
+<script type="text/javascript" src="js/articles-all.js"></script>
 <script>
-var $_GET=[];
-window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(a,name,value){$_GET[name]=value;});
-alert($_GET['value']);
+
+		json.forEach(function(element) {
+		  let prod_id = element.prod_id;
+		  let products = element.prod;
+		  
+		  console.log(prod_id);
+		  
+		  products.forEach(function(prod) {
+		    html += '<div class="colu flex-item-left" style="border:solid;border-color:#ccc;"><span>'+prod.title+'</span><br>'
+			html += '<img src="img/article.jpg" class="bc_img" loading="lazy"><br>'
+			html += '<span>'+prod.description+'</span><br><br>'
+			html += '<a href="'+prod.link+'">Read More</a></div>'
+
+		    console.log(prod.link);
+		    console.log(prod.title);
+		  })
+
+		  html += '</div>'
+		})
+
+		console.log(html);
+
+		document.getElementById('test').innerHTML = html;
+		
+
 
 </script>
-</script>
-</body>
-</html>
+
+
+

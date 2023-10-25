@@ -2,8 +2,9 @@
 
 <html>
 <head>
-	<title>Pills and Powders | Natural Nutrition, Supplements and Pharmacy Coming soon</title>
-
+	<title>Pills and Powders | Large Sizes | Natural Nutrition, Supplements and Pharmacy Coming soon</title>
+    <meta name="keywords" content="large, supplements and nutrition, medium sizes">
+	<meta name="description" content="larger sizes of supplements ordered by size large to small">
 	<script>
 	function bagAdd(){
 		document.getElementById("cartIcon").src="img/cartAdded.png";
@@ -19,11 +20,32 @@
     <div class="logo">
       <a href="index.html"><img src="gslogo.png" alt="Gadget Stall iStall" width="125px" /></a>
     </div>
-    <nav>
+       <nav>
       <ul id="MenuItems">
-        <li><a href="index.html">Home</a></li>
-		<li><a href="contact.html">Contact</a></li>
+       <span class="dropdown">
+		  <button class="dropbtn">Category &#8595;</button>
+             <div class="dropdown-content">
+                 <a href="supplements.html">Supplements</a>
+                 <a href="nutrients.html">Nutrition</a>
+				 <a href="vitamins.html">Vitamins</a>
+	             <a href="men.html">Men</a>
+	             <a href="women.html">Women</a>
+	             <a href="digestion.html">Digestion</a>
+              </div>
+       </span>
+<!--<span class="dropdown">
+  <button class="dropbtn">Benefit &#8595;</button>
+  <div class="dropdown-content">
+    <a href="brain.html">Mind</a>
+    <a href="energy.html">Energy</a>
+    <a href="diet.html">Dietry</a>
+	<a href="hormones.html">Hormones</a>
+	<a href="sleep.html">Sleep</a>
+  </div>
+  </span>-->
+	
 
+<li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
     <a href="cart.html"><img id="cartIcon" src="img/cart.png" alt="Go to basket" width="30px" height="30px" /></a>
@@ -34,42 +56,31 @@
 <div class="small-container">
   <div class="row row-2">
    <!--<h2>All Products</h2>-->
-	<form action="#"><input type="search" class="search" placeholder="Search"></input></form>
-		<span class="dropdown">
-  <button class="dropbtn">Sizes &#8595;</button>
+	<form action="#"><input id="myInput" type="search" class="search" onkeyup="searchFunction()" placeholder="Search" title="Type in a name"></input></form>
+		<span class="dropdown" style="position:unset;">
+  <button class="dropbtn">Sort by &#8595;</button>
   <div class="dropdown-content">
-    <a href="large.html">Large</a>
-    <a href="medium.html">Medium</a>
-    <a href="small.html">Small</a>
+    <a href="large.html">Largest</a>
+    <a href="small.html">Smallest</a>
+	<a href="highest.html">Highest Price</a>
+	<a href="lowest.html">Lowest Price</a>
   </div>
   </span>
-	<span class="dropdown">
-  <button class="dropbtn">Category &#8595;</button>
-  <div class="dropdown-content">
-    <a href="supplements.html">Supplements</a>
-    <a href="protein.html">Protein</a>
-    <a href="nutrients.html">Nutrients</a>
-    <a href="vitamins.html">Vitamins</a>
-	<a href="blends.html">Blends</a>
-	<a href="cosmetics.html">Cosmetics</a>
-	<a href="pharmacy.html">Pharmacy</a>
-  </div>
-</span>
-	<select>
+	<!--<select>
       <option value="">Default Sorting</option>
       <option value="">Sort by Price</option>
       <option value="">Sort by Name</option>
-      <!--<option value="">Sort by Rating</option>-->
-    </select>
+      <option value="">Sort by Rating</option>
+    </select>-->
   </div>
 <div class="outer_cont">
-<h2 class="offers-txt">Offers may be available on large orders, please enquire.</h2>
+<h2 class="offers-txt">Larger product sizes available here.</h2>
 <br><br>
 <div id="test" class="catalog flex-container"></div></div>
-<div class="more-buttons">
+<!--<div class="more-buttons">
   <a href="index.html"><button><</button></a>&nbsp;<a href="#"><button id="load-more">LOAD MORE</button></a>
 
-</div>
+</div>-->
 
 </div>
 
@@ -123,7 +134,7 @@
 
 let html = '';
 </script>
-<script type="text/javascript" src="data.js"></script>
+<script type="text/javascript" src="js/large.js"></script>
 <script>
 // JSON from json_encode($data)
 /*let json = [
@@ -157,6 +168,23 @@ let html = '';
 
 
 </script>
-
+<script>
+//search page
+function searchFunction() {
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  div = document.getElementById("test");
+  a = div.getElementsByTagName("div");
+  for (i = 0; i < a.length; i++) {
+    txtValue = a[i].textContent || a[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      a[i].style.display = "";
+    } else {
+      a[i].style.display = "none";
+    }
+  }
+}
+</script>
 
 
