@@ -649,14 +649,14 @@ text-decoration: none;
 }
 
 .more-buttons{
-    text-align:left;
+    text-align:center;
     margin:2rem!important;
 	margin-left:25!important;
 	justify-content:space-between;
 }
 .more-buttons button{
     width:unset!important;
-	float:left!important:
+	
 	margin:1rem!important;
 	font-size: strong;
 }
@@ -671,7 +671,7 @@ text-decoration: none;
   background-color: white;
   color: black;
   border: solid;
-  border-color: #7db8ff;
+  border-color: #fff;
   margin-top:0;
 }
 
