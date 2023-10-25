@@ -1,18 +1,19 @@
-<!DOCTYPE html>
+<?php
+//get from js files the json where p is like entry. put in string.
+//create variables
+var $title = array[0];
+var desc = array[1];
+var price = array[2];
+var longdesc = array[3];
+var pimg = array[4];
+?>
 <html>
 <head>
 	<title>Product Description Page</title>
-
 	<script>
 	$(function() {
         const $gallery = $('.gallery a').simpleLightbox();
       });
-	  function upnum(){
-	  document.getElementById("quant").stepUp(1);
-	  };
-	  function dwnnum(){
-	  document.getElementById("quant").stepDown(1);
-	  };
 	</script>
 	<style>
 	:root {
@@ -104,6 +105,12 @@ img {
   justify-content: center;
 }
 
+.section-ab .container {
+  margin: 3rem;
+  align-items: center;
+  justify-content: center;
+}
+
 .section-a h1 {
   font-size: 4rem;
   color: var(--primary-color);
@@ -115,7 +122,7 @@ img {
 
 .section-b {
   position: relative;
-  background: url('img/details_bd.png') no-repeat bottom center/cover;
+  background: url('pimg/OIP.jpg') no-repeat bottom center/cover;
   height: 600px;
   width:100%;
 }
@@ -252,7 +259,7 @@ img {
 
 .btn {
   display: inline-block;
-  background: #ff523b;
+  background: #0f0;
   color: #fff;
   padding: 0.8rem 1.5rem;
   border: none;
@@ -264,6 +271,34 @@ img {
 .btn:hover {
   background: var(--secondary-color);
 }
+.btn-offer {
+  display: inline-block;
+  background: #000;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  border-radius: 30px;
+}
+
+.btn-offer:hover {
+   background: #ccc;
+}
+
+.btn2 {
+  display: inline-block;
+  background: #fff;
+  color: #000;
+  padding: 0.8rem 1.5rem;
+  border: solid;
+  border-size: 2px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  border-radius: 30px;
+  margin-bottom:1.5rem;
+}
+
 
 .overlay {
   height: 100%;
@@ -330,11 +365,10 @@ img {
 <body>
  <nav class="navbar">
       <div class="container">
-        <img src="img/gblogo.png" style="width:140px;height:auto;">
+        <img src="gslogo.png" style="width:140px;height:auto;">
         <ul class="nav">
           <li><a href="#home">Home</a></li>
           <li><a href="#about">Delivery Policy</a></li>
-          <li><a href="#specs">Returns</a></li>
 					<li><a href="#contact">Contact</a></li> 
         </ul>
       </div>
@@ -344,21 +378,64 @@ img {
     <section class="section-a">
       <div class="container">
         <div>
-          <h1>Micro SD 4GB Card</h1>
+          <h1><? echo $_POST("p");?>Supplements and Nutrition</h1>
           <p>
             The Best Seller, Micro SD Card with 4 GB of Storage and Adapter for a multitude of devices.
           </p>
-<div class="btn" style="border:1;">
-		  <a  onclick="upnum();">+</a>
-		  <input id="quant" type="number" placeholder="1" style="width:2rem;font-size:2rem;border:0;margin-bottom:2rem;"></input>
-		  <a  onclick="dwnnum();">-</a></div><br> 
-          <a href="#" class="btn">Buy Now</a>
-		  <a href="#" class="btn" style="background-color:black;">Make an Offer</a>
+		  <div class="btn2">
+		 <select style="width:3rem;font-size:2rem;border:0;" placeholder="1">
+      <option value="1">1</option>
+      <option value="2">2</option>
+	  <option value="3">3</option>
+      <option value="4">4</option>
+	  <option value="5">5</option>
+	  <option value="6">6</option>
+	  <option value="7">7</option>
+	  <option value="8">8</option>
+	  <option value="9">9</option>
+	  <option value="10">10</option>
+    </select> 
+		  </div></br>
+          <a href="cart.html" class="btn">Buy Now</a>
+		  <a href="contact.html" class="btn-offer">Make an Offer</a>
         </div>
-        <img src="pimg/msd4.jpg" alt="" />
+        <img src="pimg/w.jpg" alt="" />
       </div>
     </section>
+	
+	
 
+	
+	<!-- tech spec -->
+	<section id="about" class="section-b">
+      <div class="overlay">
+        <div class="section-b-inner py-5">
+          <h3 class="text-2">Technical Specification</h3>
+          <h2 class="text-5 mt-1">Good for you.</h2>
+          <p class="mt-1">
+            Our Payment Gateway Secures the Transaction and Protects the consumer with Purchase guaranetee and dispute resolution.
+          </p>
+        </div>
+      </div>
+    </section>
+	
+	<!-- description -->
+ <section class="section-ab">
+      <div class="container">
+        <div>
+          <h1><? echo $title; ?>Supplements and Nutrition</h1>
+          <p>
+            The Best Seller, Micro SD Card with 4 GB of Storage and Adapter for a multitude of devices.<br>
+			The Best Seller, Micro SD Card with 4 GB of Storage and Adapter for a multitude of devices.<br>
+			The Best Seller, Micro SD Card with 4 GB of Storage and Adapter for a multitude of devices.<br>
+			The Best Seller, Micro SD Card with 4 GB of Storage and Adapter for a multitude of devices.
+          </p>
+		  
+        </div>
+        
+      </div>
+    </section>
+	
     <!-- Large Text -->
     <section id="about" class="section-b">
       <div class="overlay">
@@ -372,35 +449,39 @@ img {
       </div>
     </section>
 
-    <!-- Gallery -->
+
+    <!-- Gallery 
     <section class="section-c">
       <div class="gallery">
         <a href="https://i.ibb.co/CHLBZnp/gal2323.jpg" class="big"
-          ><img src="pimg/msd4.jpg" alt=""
+          ><img src="pimg/OIP.jpg" alt=""
         /></a>
         <a href="https://i.ibb.co/4pBbhfY/gal39834.jpg" class="big"
-          ><img src="pimg/msd32a.jpg" alt=""
+          ><img src="pimg/OIP.jpg" alt=""
         /></a>
         <a href="https://i.ibb.co/xSnHP7g/gal43884.jpg" class="big"
-          ><img src="pimg/msd64.jpg" alt=""
+          ><img src="pimg/OIP.jpg" alt=""
         /></a>
         <a href="https://i.ibb.co/QN6Bnrb/gal4958.jpg" class="big"
-          ><img src="pimg/msd4.jpg" alt=""
+          ><img src="pimg/OIP.jpg" alt=""
         /></a>
         <a href="https://i.ibb.co/dGZvj75/gal4545.jpg" class="big">
-          <img src="pimg/msd64.jpg" alt=""
+          <img src="pimg/OIP.jpg" alt=""
         /></a>
         <a href="https://i.ibb.co/S6FVFNt/gal74744.jpg" class="big"
-          ><img src="pimg/msd32a.jpg" alt=""
+          ><img src="pimg/OIP.jpg" alt=""
         /></a>
       </div>
-    </section>
+    </section>-->
+	
+	
 
+	
     <!-- Footer -->
     <footer class="section-footer py-4 bg-primary">
       <div class="container">
         <div>
-          <h2 class="text-2 mb-1">The Eclectic Shopping Experience</h2>
+          <h2 class="text-2 mb-1">The Natural Shopping Experience</h2>
           <a href="http://twitter.com">
             <i class="fab fa-twitter fa-2x"></i>
           </a>
@@ -423,10 +504,10 @@ img {
         <div>
           <h3>Blog Posts</h3>
           <ul>
-            <li><a href="#">Gift Randomizer</a></li>
+            <li><a href="#">Pharmacy</a></li>
             <li><a href="#">Product Bundle Customizer</a></li>
-            <li><a href="#">Lorem ipsum dolor.</a></li>
-            <li><a href="#">Lorem ipsum dolor.</a></li>
+            <li><a href="#">Complaints</a></li>
+            <li><a href="#">Pay by Bitcoin</a></li>
           </ul>
         </div>
         <div>
@@ -460,5 +541,7 @@ img {
 
 
 </body>
-
 </html>
+<?
+//
+?>
